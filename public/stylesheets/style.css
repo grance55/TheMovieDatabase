@@ -1,4 +1,85 @@
-body {
-  color: red; }
+h1 {
+  margin-top: 100px;
+  text-align: center;
+  color: #ffffff; }
+
+.loginForm {
+  width: 100%;
+  max-width: 380px;
+  padding: 1em 2em 2em 2em;
+  background-color: #ffffff;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .loginForm .loginForm__element {
+    width: 100%;
+    position: relative;
+    padding: 20px 0; }
+    .loginForm .loginForm__element .loginForm__input {
+      width: 100%;
+      border: 0;
+      border-bottom: 1.3px solid #333333;
+      display: block;
+      height: 40px;
+      outline: none; }
+      .loginForm .loginForm__element .loginForm__input--first {
+        margin-top: 0; }
+      .loginForm .loginForm__element .loginForm__input:focus ~ .loginForm__label {
+        top: 0px;
+        color: #08892d;
+        font-size: 15px; }
+      .loginForm .loginForm__element .loginForm__input:focus ~ .loginForm__bar::before,
+      .loginForm .loginForm__element .loginForm__input:focus ~ .loginForm__bar::after {
+        width: 50%; }
+    .loginForm .loginForm__element .loginForm__bar {
+      position: absolute;
+      display: block;
+      width: 100%; }
+      .loginForm .loginForm__element .loginForm__bar:before, .loginForm .loginForm__element .loginForm__bar:after {
+        content: '';
+        height: 3px;
+        width: 0;
+        bottom: 0px;
+        position: absolute;
+        background: #08892d;
+        transition: all 0.2s ease; }
+      .loginForm .loginForm__element .loginForm__bar:before {
+        left: 50%; }
+      .loginForm .loginForm__element .loginForm__bar:after {
+        right: 50%; }
+    .loginForm .loginForm__element .loginForm__label {
+      position: absolute;
+      top: 25px;
+      transition: all 0.2s ease;
+      font-size: 18px; }
+  .loginForm .loginForm__button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    color: #ffffff;
+    background-color: #08892d;
+    transition: all 0.2s ease; }
+    .loginForm .loginForm__button:hover {
+      cursor: pointer;
+      background-color: #17cc4b; }
+  .loginForm .loginForm__register {
+    text-align: center;
+    margin-bottom: 0; }
+    .loginForm .loginForm__register--link {
+      color: #08892d;
+      cursor: pointer; }
+
+* {
+  box-sizing: border-box;
+  font-family: Helvetica; }
+
+html {
+  background-color: #17cc4b; }
 
 /*# sourceMappingURL=style.css.map */
