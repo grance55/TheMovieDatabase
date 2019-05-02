@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <form action="login" method="POST">
-      <input type="email" name="email" >
-      <input type="password" name="password" >
-      <button type="submit">SUBMIT</button>
-    </form>
-  </body>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../public/javascript/login.js"></script>
+</head>
+
+<body>
+
+  <h1>The Movie Database</h1>
+  <form class="loginForm" action="handle-register" method="POST">
+
+    <div class="loginForm__element">
+      <input class="loginForm__input loginForm__input--first" onchange="handleChangeLabel()" type="email" name="email">
+      <span class="loginForm__bar"></span>
+      <label class="loginForm__label">Username</label>
+    </div>
+
+    <div class="loginForm__element">
+      <input class="loginForm__input" type="password" name="password">
+      <span class="loginForm__bar"></span>
+      <label class="loginForm__label">Password</label>
+    </div>
+
+    <button class="loginForm__button" type="submit">Login</button>
+
+    <p class="loginForm__register">Not registered? <a class="loginForm__register--link" ref="">Create an account</a></p>
+
+  </form>
+</body>
+
 </html>
