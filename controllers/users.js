@@ -1,29 +1,42 @@
 const User = require('../models/users');
 const bcrypt = require('bcryptjs');
+const uuidv4 = require('uuid/v4');
+
+async function handleAuth(token) {
+  return User.findOne({token});
+}
 
 async function handleLogin(email, password) {
-  const user = await User.findOne({email, password});
+  const user = await User.findOne({email});
 
-  console.log(user);
+  if (user && user.validatePassword(password)) {
+    return user;
+  }
 
-  return user;
+  return null;
 }
 
 async function handleRegister(email, password) {
-  const salt = bcrypt.genSaltSync(10);
+  if (User.findOne({email})) {
+    return null;
+  }
 
-  const user = new User({
+  const salt = bcrypt.genSaltSync(10);
+  const newUser = new User({
     email,
-    password: bcrypt.hashSync(password, salt)
+    password: bcrypt.hashSync(password, salt),
+    token: uuidv4(),
   });
 
   try {
-    const savedUser = await user.save();
-
-    console.log(savedUser);
-
-    return user;
+    return await newUser.save();
   } catch(e) {
     return null;
   }
+}
+
+module.exports = {
+  handleAuth,
+  handleRegister,
+  handleLogin,
 }

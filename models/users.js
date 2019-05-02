@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
@@ -7,7 +8,7 @@ const UserSchema = new Schema({
   token: {type: String, required: true},
 });
 
-UserSchema.prototype.validatePassword = function(password) {
+UserSchema.methods.validatePassword = function(password) {
   return bcrypt.compareSync(password, this.password);
 }
 
