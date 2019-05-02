@@ -6,7 +6,7 @@
   <title><%= title %></title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script type="text/javascript" src="../public/javascript/login.js"></script>
+  <script type="text/javascript" src="/javascript/login.js"></script>
 </head>
 
 <body>
@@ -14,16 +14,16 @@
   <h1>The Movie Database</h1>
   <form class="loginForm" action="handle-register" method="POST">
 
-    <div class="loginForm__element">
-      <input class="loginForm__input loginForm__input--first" onchange="handleChangeLabel()" type="email" name="email">
+    <div class="loginForm__element" onchange="handleChangeLabel(this)">
+      <input class="loginForm__input loginForm__input--first" type="email" name="email">
       <span class="loginForm__bar"></span>
-      <label class="loginForm__label">Username</label>
+      <label class="loginForm__label">username</label>
     </div>
 
-    <div class="loginForm__element">
+    <div class="loginForm__element" onchange="handleChangeLabel(this)">
       <input class="loginForm__input" type="password" name="password">
       <span class="loginForm__bar"></span>
-      <label class="loginForm__label">Password</label>
+      <label class="loginForm__label">password</label>
     </div>
 
     <button class="loginForm__button" type="submit">Login</button>
