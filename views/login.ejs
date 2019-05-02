@@ -7,6 +7,8 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script type="text/javascript" src="/javascript/login.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
@@ -17,13 +19,13 @@
     <div class="loginForm__element" onchange="handleChangeLabel(this)">
       <input class="loginForm__input loginForm__input--first" type="email" name="email">
       <span class="loginForm__bar"></span>
-      <label class="loginForm__label">username</label>
+      <label class="loginForm__label"><i class="fas fa-user"></i>username</label>
     </div>
 
     <div class="loginForm__element" onchange="handleChangeLabel(this)">
       <input class="loginForm__input" type="password" name="password">
       <span class="loginForm__bar"></span>
-      <label class="loginForm__label">password</label>
+      <label class="loginForm__label"><i class="fas fa-unlock-alt"></i>password</label>
     </div>
 
     <button class="loginForm__button" type="submit">Login</button>
