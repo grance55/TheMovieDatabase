@@ -1,15 +1,26 @@
 const express = require('express');
+const fetch = require('node-fetch');
 const router = express.Router();
+require('dotenv').config()
 
 const checkAuth = require('../middleware/checkAuth');
-const UserController = require('../controllers/users');
+const moviesList = require('../config/movieList');
+const Movie = require('../models/movies');
 
-router.get('/', checkAuth, (req, res) => {
-  res.render('index', { title: 'The Movie Database' });
-});
+router.get('/', checkAuth, async (req, res) => {
+  const movieRes = await Promise.all(moviesList.slice(0, 6).map((item) => {
+    return fetch(`http://www.omdbapi.com/?apikey=${process.env.OMDB_KEY}&t=${encodeURIComponent(item)}`)
+  }))
+  const moviesData = await Promise.all(movieRes.map(item => item.json()));
 
-router.get('/login', (req, res) => {
-  res.render('login', { title: 'The Movie Database', error: false });
+  if (moviesData.length) {
+    res.render('index', {
+      title: 'The Movie Database',
+      movies: moviesData.map((item) => new Movie(item))
+    });
+  } else {
+    res.render('index', { title: 'The Movie Database', movies: [] });
+  }
 });
 
 router.post('/login', async (req, res) => {
