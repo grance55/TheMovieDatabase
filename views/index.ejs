@@ -13,5 +13,18 @@
         <p><%= movies[i].plot %></p>
       </div>
     <% } %>
+    <div>
+      <%if (activePage > 1) { %>
+        <a href="/?page=<%= activePage - 1 %>"><</a>
+      <% } %>
+      <a href="/?page=1">1</a>
+      <a href="/?page=2">2</a>
+      <a href="/?page=3">3</a>
+      <a href="/?page=4">4</a>
+      <a href="/?page=5">5</a>
+      <%if (activePage < 5) { %>
+        <a href="/?page=<%= activePage + 1 %>">></a>
+      <% } %>
+    </div>
   </body>
 </html>

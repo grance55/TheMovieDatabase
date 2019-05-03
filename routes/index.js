@@ -8,55 +8,18 @@ const moviesList = require('../config/movieList');
 const Movie = require('../models/movies');
 
 router.get('/', checkAuth, async (req, res) => {
-  const movieRes = await Promise.all(moviesList.slice(0, 6).map((item) => {
-    return fetch(`http://www.omdbapi.com/?apikey=${process.env.OMDB_KEY}&t=${encodeURIComponent(item)}`)
-  }))
-  const moviesData = await Promise.all(movieRes.map(item => item.json()));
+  const page = req.query.page || 1;
 
-  if (moviesData.length) {
-    res.render('index', {
-      title: 'The Movie Database',
-      movies: moviesData.map((item) => new Movie(item))
-    });
-  } else {
-    res.render('index', { title: 'The Movie Database', movies: [] });
-  }
+  const movieRes = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${process.env.API_KEY}&language=en-US&page=${page}`);
+  const moviesData = await movieRes.json();
+  console.log(moviesData);
+  const movieArray = moviesData.results.map((item) => new Movie(item));
+
+  res.render('index', {
+    title: 'The Movie Database',
+    movies: movieArray,
+    activePage: page,
+  });
 });
-
-router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-
-  if (email && password) {
-    const user = await UserController.handleLogin(email, password);
-    if (user) {
-      res.cookie('token', user.token);
-      res.redirect('/');
-    } else {
-      res.redirect('/login');
-    }
-  } else {
-    res.redirect('/login');
-  }
-})
-
-router.get('/register', (req, res) => {
-  res.render('register', { title: 'The Movie Database', error: false });
-});
-
-router.post('/register', async (req, res) => {
-  const { email, password } = req.body;
-  if (email && password) {
-    const user = await UserController.handleRegister(email, password);
-
-    if (user) {
-      res.cookie('token', user.token);
-      res.redirect('/');
-    } else {
-      res.redirect('/login');
-    }
-  } else {
-    res.redirect('/register');
-  }
-})
 
 module.exports = router;
