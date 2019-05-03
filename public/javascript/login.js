@@ -1,14 +1,14 @@
-function handleChangeLabel(input) {
-
-    $(input).children('.loginForm__input').blur(function () {
-        if ($(input).children('.loginForm__input').val().length !== 0) {
-            $(input).children('.loginForm__label').css({ 'color': 'green', 'font-size': '15px', 'top': '0px' });
+function handleChangeLabel(element) {
+    console.log($(element))
+    $(element).children('.js-formInput').blur(function () {
+        if ($(element).children('.js-formInput').val().length !== 0) {
+            $(element).children('.js-formLabel').css({ 'color': 'green', 'font-size': '15px', 'top': '0px' });
         } else {
-            $(input).children('.loginForm__label').css({ 'color': 'black', 'font-size': '18px', 'top': '25px' });
+            $(element).children('.js-formLabel').css({ 'color': 'black', 'font-size': '18px', 'top': '25px' });
         }
     });
 
-    $(input).children('.loginForm__input').focus(function () {
-        $(input).children('.loginForm__label').css({ 'color': 'green', 'font-size': '15px', 'top': '0px' });
+    $(element).children('.js-formInput').focus(function () {
+        $(element).children('.js-formLabel').css({ 'color': 'green', 'font-size': '15px', 'top': '0px' });
     });
 }

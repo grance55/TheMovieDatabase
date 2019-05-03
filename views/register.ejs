@@ -2,20 +2,18 @@
 <html>
 
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script type="text/javascript" src="/javascript/login.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
 <body>
+  <h1>Register</h1>
 
-  <h1>The Movie Database</h1>
-
-  <form class="form" action="handle-register" method="POST">
+  <form class="form" action="register" method="POST">
 
     <div class="form__element" onchange="handleChangeLabel(this)">
       <input class="form__input form__input--first js-formInput" type="email" name="email">
@@ -29,10 +27,16 @@
       <label class="form__label js-formLabel"><i class="fas fa-unlock-alt"></i>password</label>
     </div>
 
-    <button class="form__button" type="submit">Login</button>
+    <div class="form__element" onchange="handleChangeLabel(this)">
+      <input class="form__input js-formInput" type="password" name="repeatPassword">
+      <span class="form__bar"></span>
+      <label class="form__label js-formLabel"><i class="fas fa-unlock-alt"></i>repeat password</label>
+    </div>
 
-    <p class="form__footer">Not registered? <a class="form__footer--link" href="http://localhost:8082/register">Create
-        an account</a></p>
+    <button class="form__button" type="submit">Register</button>
+
+    <p class="form__footer">Already registered? <a class="form__footer--link" href="http://localhost:8082/login">Log
+        in</a></p>
 
   </form>
 
