@@ -1,14 +1,18 @@
 @import '_colors';
 
-h1{
+html{
+    background-color: $lightGreen;
+}
+
+h1 {
     margin-top: 100px;
     text-align: center;
     color: $white;
 }
 
-.loginForm{
+.form {
     width: 100%;
-    max-width: 380px;
+    max-width: 350px;
     padding: 1em 2em 2em 2em;
     background-color: $white;; 
     position: fixed;
@@ -18,43 +22,43 @@ h1{
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-
-    .loginForm__element {
+    .form__element {
         width: 100%;
         position: relative;
         padding: 20px 0;
-
-        .loginForm__input {
+        
+        .form__input {
             width: 100%;
             border: 0;
             border-bottom: 1.3px solid $darkGrey;
             display: block;
             height: 40px;
             outline: none;
+            font-size: 20px; 
 
             &--first {
                 margin-top: 0;
             }
 
-            &:focus ~ .loginForm__label { 
+            &:focus ~ .form__label { 
                 top: 0px;
                 color: $green;
                 font-size: 15px;
                 
             }
 
-            &:focus ~ .loginForm__bar::before,
-            &:focus ~ .loginForm__bar::after{
+            &:focus ~ .form__bar::before,
+            &:focus ~ .form__bar::after {
                 width: 50%;
             }
         }
 
-        .loginForm__bar{
+        .form__bar {
             position: absolute;
             display: block;
             width: 100%;
 
-            &:before , &:after{
+            &:before , &:after {
                 content: '';
                 height: 3px; 
                 width: 0;
@@ -73,17 +77,19 @@ h1{
             }
         }
 
-        .loginForm__label {
+        .form__label {
             position: absolute;
             top: 25px;
             transition: all 0.2s ease;
             font-size: 18px;
+
+            i {
+                margin-right: 10px;
+            }
         }
     }
 
-
-
-    .loginForm__button {
+    .form__button {
         width: 100%;
         margin-top: 20px;
         padding: 10px;
@@ -94,19 +100,20 @@ h1{
         background-color: $green;
         transition: all 0.2s ease;
 
-        &:hover{
+        &:hover {
             cursor: pointer;
             background-color: $lightGreen;
         }
     }
 
-    .loginForm__register{
+    .form__footer {
         text-align: center;
         margin-bottom: 0;
 
-        &--link{
+        &--link {
             color: $green;
             cursor: pointer;
+            text-decoration: underline;
         }
     }
 
