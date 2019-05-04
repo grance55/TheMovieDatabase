@@ -1,5 +1,9 @@
 .loginRegister {
   background-color: #17cc4b;
+  min-height: 100vh;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
 }
 
 .loginRegister .loginRegister__h1 {

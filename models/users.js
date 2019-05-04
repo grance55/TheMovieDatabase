@@ -6,6 +6,7 @@ const UserSchema = new Schema({
   email: {type: String, required: true, index: { unique: true }},
   password: {type: String, required: true},
   token: {type: String, required: true},
+  favorites: {type: Array},
 });
 
 UserSchema.methods.validatePassword = function(password) {

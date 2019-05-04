@@ -10,36 +10,41 @@
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
 
-<body class="wholeBody">
+<body>
 
-  <h1 class="loginRegister__h1">Register</h1>
+  <div class="loginRegister">
 
-  <form class="form" action="register" method="POST">
+    <h1 class="loginRegister__h1">Register</h1>
 
-    <div class="form__element" onchange="handleChangeLabel(this)">
-      <input class="form__input form__input--first js-formInput" type="email" name="email">
-      <span class="form__bar"></span>
-      <label class="form__label js-formLabel"><i class="fas fa-user"></i>email</label>
-    </div>
+    <form class="loginRegister__form form" action="register" method="POST">
 
-    <div class="form__element" onchange="handleChangeLabel(this)">
-      <input class="form__input js-formInput" type="password" name="password">
-      <span class="form__bar"></span>
-      <label class="form__label js-formLabel"><i class="fas fa-unlock-alt"></i>password</label>
-    </div>
+      <div class="form__element" onchange="handleChangeLabel(this)">
+        <input class="form__input form__input--first js-formInput" type="email" name="email">
+        <span class="form__bar"></span>
+        <label class="form__label js-formLabel"><i class="fas fa-user"></i>email</label>
+      </div>
 
-    <div class="form__element" onchange="handleChangeLabel(this)">
-      <input class="form__input js-formInput" type="password" name="repeatPassword">
-      <span class="form__bar"></span>
-      <label class="form__label js-formLabel"><i class="fas fa-unlock-alt"></i>repeat password</label>
-    </div>
+      <div class="form__element" onchange="handleChangeLabel(this)">
+        <input class="form__input js-formInput" type="password" name="password">
+        <span class="form__bar"></span>
+        <label class="form__label js-formLabel"><i class="fas fa-unlock-alt"></i>password</label>
+      </div>
 
-    <button class="form__button" type="submit">Register</button>
+      <div class="form__element" onchange="handleChangeLabel(this)">
+        <input class="form__input js-formInput" type="password" name="repeatPassword">
+        <span class="form__bar"></span>
+        <label class="form__label js-formLabel"><i class="fas fa-unlock-alt"></i>repeat password</label>
+      </div>
 
-    <p class="form__footer">Already registered? <a class="form__footer--link" href="http://localhost:8082/login">Log
-        in</a></p>
+      <button class="form__button" type="submit">Register</button>
 
-  </form>
+      <p class="form__footer">Already registered? <a class="form__footer--link" href="http://localhost:8082/login">Log
+          in</a></p>
+
+    </form>
+
+
+  </div>
 
 </body>
 

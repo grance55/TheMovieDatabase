@@ -28,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', require('./routes/index'));
 app.use('/login', require('./routes/login'));
 app.use('/register', require('./routes/register'));
+app.use('/profile', require('./routes/profile'));
 
 /* CONNECT TO DB */
 db.connectDb()

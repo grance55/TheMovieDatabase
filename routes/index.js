@@ -1,62 +1,28 @@
 const express = require('express');
-const fetch = require('node-fetch');
 const router = express.Router();
-require('dotenv').config()
 
 const checkAuth = require('../middleware/checkAuth');
-const moviesList = require('../config/movieList');
-const Movie = require('../models/movies');
+const MoviesController = require('../controllers/movies');
+const UserController = require('../controllers/users');
 
 router.get('/', checkAuth, async (req, res) => {
-  const movieRes = await Promise.all(moviesList.slice(0, 6).map((item) => {
-    return fetch(`http://www.omdbapi.com/?apikey=${process.env.OMDB_KEY}&t=${encodeURIComponent(item)}`)
-  }))
-  const moviesData = await Promise.all(movieRes.map(item => item.json()));
+  const page = req.query.page || 1;
+  const movieArray = await MoviesController.fetchHomeMovies(page);
 
-  if (moviesData.length) {
-    res.render('index', {
-      title: 'The Movie Database',
-      movies: moviesData.map((item) => new Movie(item))
-    });
-  } else {
-    res.render('index', { title: 'The Movie Database', movies: [] });
-  }
+  res.render('index', {
+    title: 'The Movie Database',
+    movies: movieArray,
+    activePage: page,
+  });
 });
 
-router.post('/login', async (req, res) => {
-  const { email, password } = req.body;
+router.post('/favorite', async (req, res) => {
+  const { id } = req.body;
+  const user = await UserController.addToFavorites(req.cookies.token, id);
 
-  if (email && password) {
-    const user = await UserController.handleLogin(email, password);
-    if (user) {
-      res.cookie('token', user.token);
-      res.redirect('/');
-    } else {
-      res.redirect('/login');
-    }
-  } else {
-    res.redirect('/login');
-  }
-})
+  console.log('NAKON SVEGA ===>', user);
 
-router.get('/register', (req, res) => {
-  res.render('register', { title: 'The Movie Database', error: false });
-});
-
-router.post('/register', async (req, res) => {
-  const { email, password } = req.body;
-  if (email && password) {
-    const user = await UserController.handleRegister(email, password);
-
-    if (user) {
-      res.cookie('token', user.token);
-      res.redirect('/');
-    } else {
-      res.redirect('/login');
-    }
-  } else {
-    res.redirect('/register');
-  }
+  res.redirect('/');
 })
 
 module.exports = router;

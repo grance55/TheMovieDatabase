@@ -35,8 +35,21 @@ async function handleRegister(email, password) {
   }
 }
 
+async function addToFavorites(token, id) {
+  const user = await User.findOneAndUpdate({token}, {
+    $addToSet: {
+      favorites: [id],
+    }
+  });
+
+  console.log('OVO TUU', user);
+
+  return user;
+}
+
 module.exports = {
   handleAuth,
   handleRegister,
   handleLogin,
+  addToFavorites,
 }
