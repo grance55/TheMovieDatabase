@@ -137,4 +137,115 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.warpper {
+  min-height: 100vh;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+.navbar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #081c24;
+  padding: 10px;
+}
+
+.navbar .navbar__logo {
+  width: 100px;
+  height: 100px;
+  margin: 0 20px;
+  cursor: pointer;
+}
+
+.navbar .navbar__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.navbar .navbar__group--profile {
+  margin-right: 40px;
+}
+
+.navbar .navbar__group .navbar__link {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  color: #ffffff;
+}
+
+.navbar .navbar__group .navbar__icon {
+  color: #ffffff;
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+.activePage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 10px;
+}
+
+.activePage .activePage__link {
+  color: #081c24;
+  margin: 10px;
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+}
+
+.movies {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  background-color: #081c24;
+}
+
+.movies .element {
+  width: 25%;
+  height: auto;
+  padding: 3px;
+}
+
+.movies .element .element__poster {
+  width: 100%;
+  height: 450px;
+  border-radius: 5px;
+}
 /*# sourceMappingURL=style.css.map */
