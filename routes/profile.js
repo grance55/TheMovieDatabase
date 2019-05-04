@@ -6,6 +6,7 @@ const UserController = require('../controllers/users');
 
 router.get('/', checkAuth, async (req, res) => {
   const user = await UserController.handleAuth(req.cookies.token);
+  console.log(user);
 
   res.render('profile', {
     title: 'The Movie Database',
