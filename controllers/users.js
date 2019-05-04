@@ -17,7 +17,8 @@ async function handleLogin(email, password) {
 }
 
 async function handleRegister(email, password) {
-  if (User.findOne({email})) {
+  const user = await User.findOne({email});
+  if (Boolean(user)) {
     return null;
   }
 
@@ -42,7 +43,15 @@ async function addToFavorites(token, id) {
     }
   });
 
-  console.log('OVO TUU', user);
+  return user;
+}
+
+async function removeFromFavorites(token, id) {
+  const user = await User.findOneAndUpdate({token}, {
+    $pull: {
+      favorites: id,
+    }
+  });
 
   return user;
 }
@@ -52,4 +61,5 @@ module.exports = {
   handleRegister,
   handleLogin,
   addToFavorites,
+  removeFromFavorites,
 }

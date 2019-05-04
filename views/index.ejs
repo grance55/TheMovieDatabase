@@ -15,7 +15,7 @@
     <h5><%= movies[i].year %></h5>
     <img src="<%= movies[i].poster %>" alt="presentation">
     <p><%= movies[i].plot %></p>
-    <form action="/favorite" method="POST">
+    <form action="/add-favorite" method="POST">
       <input type="hidden" value="<%= movies[i].id %>" name="id">
       <button type="submit">ADD TO FAVORITES</button>
     </form>
