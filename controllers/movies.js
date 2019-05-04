@@ -9,6 +9,17 @@ async function fetchHomeMovies(page) {
   return moviesData.results.map((item) => new Movie(item));
 }
 
+async function fetchArrayMovies(array) {
+  const movieRes = await Promise.all(array.map((id) => {
+    return fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${env.API_KEY}`)
+  }));
+
+  const data = await Promise.all(movieRes.map((item) => item.json()));
+  console.log(data);
+  return data;
+}
+
 module.exports = {
   fetchHomeMovies,
+  fetchArrayMovies,
 }

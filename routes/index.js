@@ -20,8 +20,6 @@ router.post('/favorite', async (req, res) => {
   const { id } = req.body;
   const user = await UserController.addToFavorites(req.cookies.token, id);
 
-  console.log('NAKON SVEGA ===>', user);
-
   res.redirect('/');
 })
 
