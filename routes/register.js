@@ -3,11 +3,11 @@ const router = express.Router();
 
 const UserController = require('../controllers/users');
 
-router.get('/register', (req, res) => {
+router.get('/', (req, res) => {
   res.render('register', { title: 'The Movie Database', error: false });
 });
 
-router.post('/register', async (req, res) => {
+router.post('/', async (req, res) => {
   const { email, password } = req.body;
   if (email && password) {
     const user = await UserController.handleRegister(email, password);

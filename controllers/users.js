@@ -35,6 +35,10 @@ async function handleRegister(email, password) {
   }
 }
 
+async function addToFavorites(id) {
+  const user = await User.findOneAndUpdate();
+}
+
 module.exports = {
   handleAuth,
   handleRegister,
