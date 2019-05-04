@@ -15,8 +15,8 @@ async function fetchArrayMovies(array) {
   }));
 
   const data = await Promise.all(movieRes.map((item) => item.json()));
-  console.log(data);
-  return data;
+
+  return data.map((item) => new Movie(item));
 }
 
 module.exports = {

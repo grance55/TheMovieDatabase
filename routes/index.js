@@ -16,11 +16,19 @@ router.get('/', checkAuth, async (req, res) => {
   });
 });
 
-router.post('/favorite', async (req, res) => {
+router.post('/add-favorite', async (req, res) => {
   const { id } = req.body;
-  const user = await UserController.addToFavorites(req.cookies.token, id);
+  await UserController.addToFavorites(req.cookies.token, id);
 
   res.redirect('/');
+})
+
+router.post('/remove-favorite', async(req, res) => {
+  console.log('tu sam');
+  const { id } = req.body;
+  await UserController.removeFromFavorites(req.cookies.token, id);
+
+  res.redirect('/profile');
 })
 
 module.exports = router;

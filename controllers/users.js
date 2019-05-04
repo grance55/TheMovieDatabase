@@ -46,10 +46,10 @@ async function addToFavorites(token, id) {
   return user;
 }
 
-async function removeToFavorites(token, id) {
+async function removeFromFavorites(token, id) {
   const user = await User.findOneAndUpdate({token}, {
-    $remove: {
-      favorites: [id],
+    $pull: {
+      favorites: id,
     }
   });
 
@@ -61,5 +61,5 @@ module.exports = {
   handleRegister,
   handleLogin,
   addToFavorites,
-  removeToFavorites,
+  removeFromFavorites,
 }
