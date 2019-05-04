@@ -3,6 +3,10 @@
     font-family: Helvetica;
 }
 
-html {
-    background-color: $lightGreen;
+html, 
+body { 
+  min-height: 100vh;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
 }

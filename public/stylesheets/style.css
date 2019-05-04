@@ -1,10 +1,14 @@
-h1 {
+.wholeBody {
+  background-color: #17cc4b;
+}
+
+.loginRegister__h1 {
   margin-top: 100px;
   text-align: center;
   color: #ffffff;
 }
 
-.loginForm {
+.form {
   width: 100%;
   max-width: 350px;
   padding: 1em 2em 2em 2em;
@@ -19,13 +23,13 @@ h1 {
           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.loginForm .loginForm__element {
+.form .form__element {
   width: 100%;
   position: relative;
   padding: 20px 0;
 }
 
-.loginForm .loginForm__element .loginForm__input {
+.form .form__element .form__input {
   width: 100%;
   border: 0;
   border-bottom: 1.3px solid #333333;
@@ -35,28 +39,28 @@ h1 {
   font-size: 20px;
 }
 
-.loginForm .loginForm__element .loginForm__input--first {
+.form .form__element .form__input--first {
   margin-top: 0;
 }
 
-.loginForm .loginForm__element .loginForm__input:focus ~ .loginForm__label {
+.form .form__element .form__input:focus ~ .form__label {
   top: 0px;
   color: #08892d;
   font-size: 15px;
 }
 
-.loginForm .loginForm__element .loginForm__input:focus ~ .loginForm__bar::before,
-.loginForm .loginForm__element .loginForm__input:focus ~ .loginForm__bar::after {
+.form .form__element .form__input:focus ~ .form__bar::before,
+.form .form__element .form__input:focus ~ .form__bar::after {
   width: 50%;
 }
 
-.loginForm .loginForm__element .loginForm__bar {
+.form .form__element .form__bar {
   position: absolute;
   display: block;
   width: 100%;
 }
 
-.loginForm .loginForm__element .loginForm__bar:before, .loginForm .loginForm__element .loginForm__bar:after {
+.form .form__element .form__bar:before, .form .form__element .form__bar:after {
   content: '';
   height: 3px;
   width: 0;
@@ -67,15 +71,15 @@ h1 {
   transition: all 0.2s ease;
 }
 
-.loginForm .loginForm__element .loginForm__bar:before {
+.form .form__element .form__bar:before {
   left: 50%;
 }
 
-.loginForm .loginForm__element .loginForm__bar:after {
+.form .form__element .form__bar:after {
   right: 50%;
 }
 
-.loginForm .loginForm__element .loginForm__label {
+.form .form__element .form__label {
   position: absolute;
   top: 25px;
   -webkit-transition: all 0.2s ease;
@@ -83,7 +87,11 @@ h1 {
   font-size: 18px;
 }
 
-.loginForm .loginForm__button {
+.form .form__element .form__label i {
+  margin-right: 10px;
+}
+
+.form .form__button {
   width: 100%;
   margin-top: 20px;
   padding: 10px;
@@ -96,17 +104,17 @@ h1 {
   transition: all 0.2s ease;
 }
 
-.loginForm .loginForm__button:hover {
+.form .form__button:hover {
   cursor: pointer;
   background-color: #17cc4b;
 }
 
-.loginForm .loginForm__register {
+.form .form__footer {
   text-align: center;
   margin-bottom: 0;
 }
 
-.loginForm .loginForm__register--link {
+.form .form__footer--link {
   color: #08892d;
   cursor: pointer;
   text-decoration: underline;
@@ -118,7 +126,11 @@ h1 {
   font-family: Helvetica;
 }
 
-html {
-  background-color: #17cc4b;
+html,
+body {
+  min-height: 100vh;
+  overflow: auto;
+  margin: 0;
+  padding: 0;
 }
 /*# sourceMappingURL=style.css.map */
