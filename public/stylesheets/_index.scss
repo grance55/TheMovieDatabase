@@ -6,6 +6,7 @@
     margin: 0;
     padding: 0;
     max-width: 100%;
+    background-color: $dark;
 }
 
 .navbar {
@@ -13,53 +14,66 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    justify-content: space-between;
     background-color: $dark;
-    padding: 10px;
+    padding: 20px 60px;
+    border: none;
 
-    .navbar__logo {
-        width: 100px;
-        height: 100px;
-        margin: 0 20px;
+    &__logo {
+        width: 80px;
+        height: 80px;
         cursor: pointer;
+        fill: rgba(12, 128, 174, 0.9);
     }
 
-    .navbar__group {
-        display: flex;
-        flex-direction: column;
+    &__group {
+        display: inline-flex;
+        flex-direction: row;
         align-items: center;
-        transition: all 0.2s ease;
+        
+        .group__element {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
-        &--profile {
+            .group__link {
+                text-decoration-line: none;
+                color: $white;
+            }
+    
+            .group__icon {
+                color: $white;
+                font-size: 25px;
+                margin-bottom: 10px;
+            }    
+        }
+
+        .group__element--profile {
             margin-right: 40px;
         }
-
-        .navbar__link {
-            text-decoration-line: none;
-            color: $white;
-        }
-
-        .navbar__icon {
-            color: $white;
-            font-size: 25px;
-            margin-bottom: 10px;
-        }
-
     }
-
-    
 }
 
-.activePage {
+.search {
+    background-color: $dark;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
+    padding-left: 200px;
+    align-items: center;
 
-    .activePage__link{
-        color: $dark;
-        margin: 10px;
-        text-decoration-line: none;
+    &__icon {
+        color: $white;
+        margin-right: 20px;
+    }
+
+    &__input {
+        width: 100%;
+        background-color: $dark;
+        border: none;
+        font-size: 20px;
+        color: $white;
+        padding: 10px;
+        outline: none;
     }
 }
 
@@ -67,17 +81,86 @@
     display: inline-flex;
     flex-flow: row wrap;
     background-color: $dark;
+    padding-top: 80px;
 
     .element {
-        width: 25%;
+        width: calc(100% * (1/6));
         height: auto;
         padding: 3px;
+        position: relative;
 
-        .element__poster {
+        &__poster {
             width: 100%;
-            height: 450px;  
+            height: 100%;
             border-radius: 5px; 
+            transition: all 0.3s ease;
+            opacity: 1;
+        }
+
+        &__inner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            padding: 0 10px;
+            text-align: center;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            color: $white;
+        }
+
+        &:hover{
+            .element__inner {
+                opacity: 1;
+            }
+
+            .element__poster {
+                opacity: 0.3;
+            }
+        }
+        
+        .favorite__button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background: transparent;
+            outline: none;
+
+            .favorite__icon {
+                font-size: 20px;
+                color: $white;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    color: red;
+                }
+            }
         }
     }
+}
 
+.activePage {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+    background-color: $dark;
+
+    .activePage__link {
+        color: $white;
+        margin: 10px;
+        text-decoration-line: none;
+    }
+}
+
+.footer{
+    background-image: linear-gradient(to bottom right, rgba(8, 28, 36, 1), rgba(13, 79, 105, 0.9)), url('../images/footer_img.jpg');
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    height: 400px;
 }

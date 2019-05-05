@@ -14,16 +14,16 @@
   <hr>
   <h3>Favorite movies:</h3>
   <% for(var i=0; i < movies.length; i++) { %>
-    <div>
-      <h4><%= movies[i].title %></h4>
-      <h5><%= movies[i].year %></h5>
-      <img src="<%= movies[i].poster %>" alt="presentation">
-      <p><%= movies[i].plot %></p>
-      <form action="/remove-favorite" method="POST">
-        <input type="hidden" value="<%= movies[i].id %>" name="id">
-        <button type="submit">REMOVE TO FAVORITES</button>
-      </form>
-    </div>
+  <div>
+    <h4><%= movies[i].title %></h4>
+    <h5><%= movies[i].year %></h5>
+    <img src="<%= movies[i].poster %>" alt="presentation">
+    <p><%= movies[i].plot %></p>
+    <form action="/remove-favorite" method="POST">
+      <input type="hidden" value="<%= movies[i].id %>" name="id">
+      <button type="submit">REMOVE TO FAVORITES</button>
+    </form>
+  </div>
   <% } %>
 
 </body>

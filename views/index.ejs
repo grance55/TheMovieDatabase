@@ -18,13 +18,6 @@
 
       <svg class="navbar__logo" onclick="redirect('http://localhost:8082/')" data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg" viewBox="0 0 251.34 222.81">
-        <defs>
-          <style>
-            .cls-1 {
-              fill: #01d277;
-            }
-          </style>
-        </defs>
         <title>PrimaryLogo_Green</title>
         <path class="cls-1"
           d="M2944.56,2236.34c14.6,0,24.48-9.88,24.48-24.48V2052.58c0-14.6-9.88-24.48-24.48-24.48H2742.19c-14.6,0-24.48,9.88-24.48,24.48v198.33l12.56-14.56h0V2052.58a11.94,11.94,0,0,1,11.92-11.92h202.37a11.94,11.94,0,0,1,11.92,11.92v159.28a11.94,11.94,0,0,1-11.92,11.92H2760.82l-12.56,12.56-0.08-.1"
@@ -53,46 +46,68 @@
           points="144.01 105.38 134.87 86.65 126.86 86.65 143.23 122.08 144.79 122.08 161.15 86.65 153.14 86.65 144.01 105.38" />
       </svg>
 
-      <div class="navbar__group navbar__group--profile">
-        <i class="fas fa-user-circle navbar__icon"></i>
-        <a href="/profile" class="navbar__link">TO PROFILE</a>
-      </div>
+      <div class="navbar__group group">
 
-      <div class="navbar__group">
-        <i class="fas fa-sign-out-alt navbar__icon"></i>
-        <a href="/login" class="navbar__link">LOG OUT</a>
+        <div class="group__element group__element--profile">
+          <i class="fas fa-user-circle group__icon"></i>
+          <a href="/profile" class="group__link">TO PROFILE</a>
+        </div>
+
+        <div class="group__element">
+          <i class="fas fa-sign-out-alt group__icon"></i>
+          <a href="/login" class="group__link">LOG OUT</a>
+        </div>
+
       </div>
 
     </div>
+
+    <div class="wrapper__search search">
+      <i class="fas fa-search search__icon"></i>
+      <input class="search__input" type="text" placeholder="Search for a movie...">
+    </div>
+
+    <!-- mihelj stavi 24 filma po stranici-->
     <div class="wrapper__movies movies">
       <% for(var i=0; i < movies.length; i++) { %>
       <div class="movies__element element">
-        <h4 class="element__name"><%= movies[i].title %></h4>
-        <h5 class="element__year"><%= movies[i].year %></h5>
-        <img class="element__poster" src="<%= movies[i].poster %>" alt="presentation">
 
-        <!-- <p class="element__plot"><%= movies[i].plot %></p> -->
+        <img class="element__poster" src="<%= movies[i].poster %>" style="" alt="presentation">
 
-        <form class="element__form" action="/add-favorite" method="POST">
-          <input class="element__formInput" type="hidden" value="<%= movies[i].id %>" name="id">
-          <button class="element__formButton" type="submit">ADD TO FAVORITES</button>
-        </form>
+        <div class="element__inner">
+          <h4 class="element__name"><%= movies[i].title %></h4>
+          <h5 class="element__year"><%= movies[i].year %></h5>
+
+          <!-- <p class="element__plot"><%= movies[i].plot %></p> -->
+
+          <form action="/add-favorite" method="POST">
+            <input type="hidden" value="<%= movies[i].id %>" name="id">
+            <button class="favorite__button" type="submit"><i class="far fa-heart favorite__icon"></i></button>
+          </form>
+        </div>
+
       </div>
       <% } %>
     </div>
+
     <div class="wrapper__activePage activePage">
 
       <%if (activePage > 1) { %>
       <a class="activePage__link" href="/?page=<%= activePage - 1 %>">
-        <i class="fas fa-step-backward"></i></a> <% } %> <a class="activePage__link" href="/?page=1">1
+        <i class="fas fa-step-backward activePage__icon"></i></a> <% } %> <a class="activePage__link" href="/?page=1">1
       </a>
       <a class="activePage__link" href="/?page=2">2</a>
       <a class="activePage__link" href="/?page=3">3</a>
       <a class="activePage__link" href="/?page=4">4</a>
       <a class="activePage__link" href="/?page=5">5</a>
       <%if (activePage < 5) { %>
-      <a class="activePage__link" href="/?page=<%= activePage + 1 %>"><i class="fas fa-step-forward"></i></a>
+      <a class="activePage__link" href="/?page=<%= activePage + 1 %>"><i
+          class="fas fa-step-forward activePage__icon"></i></a>
       <% } %>
+    </div>
+
+    <div class="wrapper__footer footer">
+
     </div>
 
   </div>
