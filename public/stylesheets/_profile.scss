@@ -15,7 +15,7 @@
     }
 }
 
-.wrapper__heading{
+.wrapper__heading {
     margin: 0;
     background-color: $dark;
     color: $white;
@@ -24,54 +24,64 @@
     font-size: 30px;
 }
 
-.favorites{
+.favorites {
+    display: inline-flex;
+    flex-flow: row wrap;
     background-color: $dark;
-    display: flex;
     color: $white;
-    padding: 50px 200px;
+    padding-bottom: 100px;
+    .element {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: inline-flex;
+        padding: 30px 10px;
+        justify-content: center;
 
-
-    &__poster{
-        width: 250px;
-        height: 100%;
-        border-radius: 5px;
-    }
-
-
-    &__group{
-        padding: 70px 100px;;
-
-        .favorites__title{
-            margin: 0;
+        &__poster {
+            width: 300px;
+            height: 100%;
+            border-radius: 5px;
         }
 
-        .favorites__year{
-            margin-left: 20px;
-        }
+        .group {
+            padding: 30px 50px;
+            padding-right: 0;
+            width: 500px;
 
-        .inline{
-            display: inline-flex;
-        }
-
-
-        .favorite__button {
-            width: 50px;
-            height: 50px;
-            border: none;
-            background: transparent;
-            outline: none;
-
-            .favorite__icon {
-                font-size: 20px;
-                color: red;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                
-                &:hover {
-                    color: $white;
-                }
+            &__title {
+                margin: 0;
             }
+
+            .header {
+                display: inline-flex;
+                align-items: center;
+
+                &__button {
+                    width: 50px;
+                    height: 50px;
+                    border: none;
+                    background: transparent;
+                    outline: none;
+        
+                    .header__icon {
+                        font-size: 20px;
+                        color: red;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        
+                        &:hover{
+                            color: $white;
+                        }
+
+                    }
+
+                }
+
+            }
+
         }
+
     }
 
 }

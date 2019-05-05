@@ -1,0 +1,10 @@
+1. dodavanje username svakom korisniku
+2. u profile.ejs dodati mogućnost da svaki korinik na mjesto ikone doda svoju sliku ( iznad rici profile) 
+3. samim time i ric profile zaminiti usernameom 
+4. mihelj stavi 24 filma po index stranici
+5. prominiti logo i register da bude u skladu sa plavim bojama glavne stranice
+6. mihelj pogledaj file _navbarFooter.scss i reci mi jeli ovo dobar nacin rjesavanja ovakvih stvari 
+    ( znam da triban drugacije nazvati file :)
+7. promini gainu filma u samo godinu a ne datum cili
+8. oni koji su u favoritima moraju imati crveno srce na idex pageu
+9. deveto ali i zadnje, nisam napravia novi branch kada sam radia profil da nebi bilo jebade opet, jbg!

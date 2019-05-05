@@ -54,6 +54,7 @@
             transform: translate(-50%, -50%);
             opacity: 0;
             color: $white;
+            font-size: 20px;
         }
 
         &:hover{
@@ -74,7 +75,7 @@
             outline: none;
 
             .favorite__icon {
-                font-size: 20px;
+                font-size: 22px;
                 color: $white;
                 cursor: pointer;
                 transition: all 0.3s ease;

@@ -64,7 +64,7 @@
     </div>
 
     <div class="wrapper__profile profile">
-      <i class="far fa-id-badge profile__icon"></i>
+      <i class="fas fa-user-circle profile__icon"></i>
       <h1 class="profile__heading">PROFILE</h1>
       <p class="profile__mail"><%= email %></p>
     </div>
@@ -72,26 +72,32 @@
 
     <h3 class="wrapper__heading">Your favorite movies:</h3>
 
-    <% for(var i=0; i < movies.length; i++) { %>
+
     <div class="wrapper__favorites favorites">
+      <% for(var i=0; i < movies.length; i++) { %>
+      <div class="favorites__element element">
 
-      <img class="favorites__poster" src="<%= movies[i].poster %>" alt="presentation">
+        <img class="element__poster" src="<%= movies[i].poster %>" alt="presentation">
+
+        <div class="element__group group">
+          <div class="group__header header">
+            <h4 class="header__title"><%= movies[i].title %></h4>
+            <form action="/remove-favorite" method="POST">
+              <input type="hidden" value="<%= movies[i].id %>" name="id">
+              <button class="header__button inline" type="submit"><i class="far fa-heart header__icon"></i></button>
+            </form>
+          </div>
+
+          <h5 class="group__year"><%= movies[i].year %></h5>
+          <p class="group__plot"><%= movies[i].plot %></p>
 
 
-      <div class="favorites__group">
-
-        <h4 class="favorites__title inline"><%= movies[i].title %></h4>
-        <h5 class="favorites__year inline"><%= movies[i].year %></h5>
-        <p class="favorites__plot"><%= movies[i].plot %></p>
-        <form action="/remove-favorite" method="POST">
-          <input type="hidden" value="<%= movies[i].id %>" name="id">
-          <button class="favorite__button" type="submit"><i class="far fa-heart favorite__icon"></i></button>
-        </form>
+        </div>
 
       </div>
-
+      <% } %>
     </div>
-    <% } %>
+
 
 
     <div class="wrapper__footer footer">
@@ -133,6 +139,7 @@
     </div>
 
   </div>
+
 </body>
 
 </html>
