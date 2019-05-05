@@ -1,58 +1,5 @@
 @import '_colors';
-
-.warpper {
-    min-height: 100vh;
-    overflow: auto;
-    margin: 0;
-    padding: 0;
-    max-width: 100%;
-    background-color: $dark;
-}
-
-.navbar {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    justify-content: space-between;
-    background-color: $dark;
-    padding: 20px 60px;
-    border: none;
-
-    &__logo {
-        width: 80px;
-        height: 80px;
-        cursor: pointer;
-        fill: rgba(12, 128, 174, 0.9);
-    }
-
-    &__group {
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-        
-        .group__element {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .group__link {
-                text-decoration-line: none;
-                color: $white;
-            }
-    
-            .group__icon {
-                color: $white;
-                font-size: 25px;
-                margin-bottom: 10px;
-            }    
-        }
-
-        .group__element--profile {
-            margin-right: 40px;
-        }
-    }
-}
+@import '_navbarFooter';
 
 .search {
     background-color: $dark;
@@ -118,7 +65,7 @@
                 opacity: 0.3;
             }
         }
-        
+
         .favorite__button {
             width: 50px;
             height: 50px;
@@ -153,14 +100,17 @@
         margin: 10px;
         text-decoration-line: none;
     }
+
+    .activePage__link,
+    .activePage__logo {
+        transition: all 0.3s ease;
+    }
+
+    .activePage__link:hover,
+    .activePage__icon:hover {
+        color: $lightBlue;
+    }
+
 }
 
-.footer{
-    background-image: linear-gradient(to bottom right, rgba(8, 28, 36, 1), rgba(13, 79, 105, 0.9)), url('../images/footer_img.jpg');
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    height: 400px;
-}
+

@@ -1,0 +1,77 @@
+@import '_colors';
+@import '_navbarFooter';
+
+.profile {
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    background-color: $dark;
+
+    &__icon {
+        font-size: 100px;
+    }
+}
+
+.wrapper__heading{
+    margin: 0;
+    background-color: $dark;
+    color: $white;
+    padding: 50px;
+    padding-left: 200px;
+    font-size: 30px;
+}
+
+.favorites{
+    background-color: $dark;
+    display: flex;
+    color: $white;
+    padding: 50px 200px;
+
+
+    &__poster{
+        width: 250px;
+        height: 100%;
+        border-radius: 5px;
+    }
+
+
+    &__group{
+        padding: 70px 100px;;
+
+        .favorites__title{
+            margin: 0;
+        }
+
+        .favorites__year{
+            margin-left: 20px;
+        }
+
+        .inline{
+            display: inline-flex;
+        }
+
+
+        .favorite__button {
+            width: 50px;
+            height: 50px;
+            border: none;
+            background: transparent;
+            outline: none;
+
+            .favorite__icon {
+                font-size: 20px;
+                color: red;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+}
