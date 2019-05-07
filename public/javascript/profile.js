@@ -1,11 +1,4 @@
-function redirect(url) {
-    window.location.replace(url);
-}
-
-
-
 function deleteCookie() {
-
     var cookies = document.cookie.split("; ");
     for (var c = 0; c < cookies.length; c++) {
         var d = window.location.hostname.split(".");
@@ -20,6 +13,4 @@ function deleteCookie() {
             d.shift();
         }
     }
-
 }
-

@@ -50,13 +50,13 @@
       <div class="navbar__group group">
 
         <div class="group__element group__element--profile">
-          <i class="fas fa-user-circle group__icon"></i>
           <a href="/profile" class="group__link">TO PROFILE</a>
+          <i class="fas fa-user-circle group__icon" onclick="redirect('/profile')"></i>
         </div>
 
         <div class="group__element">
-          <i class="fas fa-sign-out-alt group__icon"></i>
-          <a href="/login" class="group__link">LOG OUT</a>
+          <a href="/login" class="group__link" onclick="deleteCookie()">LOG OUT</a>
+          <a href="/login" onclick="deleteCookie()"><i class="fas fa-sign-out-alt group__icon"></i></a>
         </div>
 
       </div>
@@ -72,7 +72,7 @@
       <% for(var i=0; i < movies.length; i++) { %>
       <div class="movies__element element">
 
-        <img class="element__poster" src="<%= movies[i].poster %>" style="" alt="presentation">
+        <img class="element__poster" src="<%= movies[i].poster %>" alt="presentation">
 
         <div class="element__inner">
           <h4 class="element__name"><%= movies[i].title %></h4>

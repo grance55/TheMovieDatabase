@@ -1,30 +1,50 @@
 @import '_colors';
 
 .loginRegister {
-    background-color: $lightGreen;
+    background-color: $dark;
     min-height: 100vh;
     overflow: auto;
     margin: 0;
     padding: 0;
     
-    .loginRegister__h1 {
-        margin-top: 100px;
-        text-align: center;
-        color: $white;
+    .loginRegisterNavbar {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+
+        &__h1 {
+            color: $white;
+            margin: 0;
+            margin-left: 10px;
+        }
+
+        &__logo {
+            fill: $lightBlue;
+            width: 90px;
+            height: auto;
+        }
+
     }
+    
 }   
 
 .form {
     width: 100%;
     max-width: 350px;
     padding: 1em 2em 2em 2em;
-    background-color: $white;
+    background-color: $dark;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 4px 8px 0 $lightBlue, 0 6px 20px 0 $lightBlue;
 
     .form__element {
         width: 100%;
@@ -39,14 +59,28 @@
             height: 40px;
             outline: none;
             font-size: 20px;
+            background-color: transparent ;
+            color: $lightBlue ;
 
+            @-webkit-keyframes autofill {
+                to {
+                    color: $lightBlue;
+                    background: transparent;
+                }
+            }
+            
+            &:-webkit-autofill {
+                -webkit-animation-name: autofill;
+                -webkit-animation-fill-mode: both;
+            }
+            
             &--first {
                 margin-top: 0;
             }
 
             &:focus ~ .form__label {
                 top: 0px;
-                color: $green;
+                color: $lightBlue;
                 font-size: 15px;
 
             }
@@ -55,7 +89,7 @@
             &:focus ~ .form__bar::after {
                 width: 50%;
             }
-        }
+        }        
 
         .form__bar {
             position: absolute;
@@ -68,7 +102,7 @@
                 width: 0;
                 bottom: 0px;
                 position: absolute;
-                background: $green;
+                background: $lightBlue;
                 transition: all 0.2s ease;
             }
 
@@ -86,6 +120,8 @@
             top: 25px;
             transition: all 0.2s ease;
             font-size: 18px;
+            color: $white;
+            z-index: -1;
 
             i {
                 margin-right: 10px;
@@ -99,23 +135,26 @@
         padding: 10px;
         font-size: 20px;
         border-radius: 5px;
-        border: none;
+        border: 2px solid $lightBlue;
         color: $white;
-        background-color: $green;
+        background-color: $lightBlue;
         transition: all 0.2s ease;
 
         &:hover {
             cursor: pointer;
-            background-color: $lightGreen;
+            background-color: transparent;
+            border: 2px solid $lightBlue;
+            color: $lightBlue;
         }
     }
 
     .form__footer {
         text-align: center;
         margin-bottom: 0;
+        color:  $white;
 
         &--link {
-            color: $green;
+            color: $lightBlue;
             cursor: pointer;
             text-decoration: underline;
         }

@@ -31,19 +31,30 @@
         
         .group__element {
             display: flex;
-            flex-direction: column;
+            flex-direction: column-reverse;
             align-items: center;
 
             .group__link {
                 text-decoration-line: none;
                 color: $white;
+
+                &:hover + .group__icon{
+                    color: $lightBlue;
+                }
             }
     
             .group__icon {
                 color: $white;
                 font-size: 25px;
                 margin-bottom: 10px;
-            }    
+                transition: all 0.2s ease;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $lightBlue;
+                }
+            }
+
         }
 
         .group__element--profile {

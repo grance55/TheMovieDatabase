@@ -25,11 +25,12 @@
 }
 
 .favorites {
-    display: inline-flex;
+    display: flex;
     flex-flow: row wrap;
     background-color: $dark;
     color: $white;
     padding-bottom: 100px;
+    
     .element {
         width: 100%;
         height: auto;
@@ -49,13 +50,13 @@
             padding-right: 0;
             width: 500px;
 
-            &__title {
-                margin: 0;
-            }
-
             .header {
                 display: inline-flex;
                 align-items: center;
+
+                &__title {
+                    font-size: 20px;
+                }
 
                 &__button {
                     width: 50px;
