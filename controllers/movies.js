@@ -22,7 +22,6 @@ async function fetchArrayMovies(array) {
 async function fetchSingleMovie(id) {
   const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${env.API_KEY}`);
   const data = await res.json();
-  console.log(data);
   return new Movie(data);
 }
 

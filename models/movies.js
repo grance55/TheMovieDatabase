@@ -9,7 +9,7 @@ class Movie {
     this.vote = movie.vote_average;
     this.duration = movie.runtime;
     this.rate = movie.vote_average;
-    this.genre = movie.genres.map((item) => item.name).join();
+    this.genre = movie.genres && movie.genres.map((item) => item.name).join();
   }
 }
 
