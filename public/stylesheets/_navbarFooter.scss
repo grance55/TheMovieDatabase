@@ -38,7 +38,7 @@
                 text-decoration-line: none;
                 color: $white;
 
-                &:hover + .group__icon{
+                &:hover ~ .group__icon{
                     color: $lightBlue;
                 }
             }

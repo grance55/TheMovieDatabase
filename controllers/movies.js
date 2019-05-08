@@ -19,7 +19,15 @@ async function fetchArrayMovies(array) {
   return data.map((item) => new Movie(item));
 }
 
+async function fetchSingleMovie(id) {
+  const res = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${env.API_KEY}`);
+  const data = await res.json();
+
+  return new Movie(data);
+}
+
 module.exports = {
   fetchHomeMovies,
   fetchArrayMovies,
+  fetchSingleMovie,
 }

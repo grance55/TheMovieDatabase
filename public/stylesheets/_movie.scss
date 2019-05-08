@@ -1,0 +1,18 @@
+@import '_colors';
+
+.wrapper{
+    max-height: 100vh;
+}
+
+
+.movie{
+    max-height: calc(100vh-120px);
+    display: flex;
+    background-color: $dark;
+    color: $white;
+
+    
+    &__poster{
+        
+    }
+}
