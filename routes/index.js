@@ -16,6 +16,16 @@ router.get('/', checkAuth, async (req, res) => {
   });
 });
 
+router.get('/movie', async (req, res) => {
+  const id = req.query.id;
+  const movie = await MoviesController.fetchSingleMovie(id);
+
+  res.render('movie', {
+    title: 'The Movie Database',
+    movie,
+  });
+});
+
 router.post('/add-favorite', async (req, res) => {
   const { id } = req.body;
   await UserController.addToFavorites(req.cookies.token, id);

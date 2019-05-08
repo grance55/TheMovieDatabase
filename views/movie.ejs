@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+
+<body>
+  <a href="/">BACK HOME</a>
+  <hr>
+  <div>
+    <h4><%= movie.title %></h4>
+    <h5><%= movie.year %></h5>
+    <img src="<%= movie.poster %>" alt="presentation">
+    <p><%= movie.plot %></p>
+    <form action="/remove-favorite" method="POST">
+      <input type="hidden" value="<%= movie.id %>" name="id">
+      <button type="submit">REMOVE TO FAVORITES</button>
+    </form>
+  </div>
+
+</body>
+
+</html>

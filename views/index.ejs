@@ -13,6 +13,7 @@
         <h5><%= movies[i].year %></h5>
         <img src="<%= movies[i].poster %>" alt="presentation">
         <p><%= movies[i].plot %></p>
+        <a href="/movie?id=<%= movies[i].id %>">OTVORI</a>
         <form action="/add-favorite" method="POST">
           <input type="hidden" value="<%= movies[i].id %>" name="id">
           <button type="submit">ADD TO FAVORITES</button>
