@@ -3,7 +3,7 @@ class Movie {
     this.id = movie.id;
     this.poster = `http://image.tmdb.org/t/p/w500${movie.poster_path}`;
     this.title = movie.title;
-    this.year = movie.release_date;
+    this.year = movie.release_date.slice(0, 4);
     this.plot = movie.overview;
     this.cover = movie.backdrop_path;
     this.vote = movie.vote_average;
