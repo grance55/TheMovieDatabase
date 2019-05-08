@@ -6,7 +6,7 @@
   <title><%= title %></title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-
+  <script type="text/javascript" src="/javascript/movie.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
@@ -68,8 +68,11 @@
     </div>
 
     <div class="wrapper__movie movie">
-      <img class="movie__poster" src="<%= movie.poster %>" alt="presentation">
-      <!--<img class="movie__poster" src="../public/images/avengers_poster.jpg">-->
+      <div class="movie__poster">
+        <img src="<%= movie.poster %>" alt="">
+      </div>
+
+
       <div class="movie__group">
         <h4><%= movie.title %></h4>
         <h5><%= movie.year %></h5>
@@ -79,9 +82,8 @@
           <button type="submit">REMOVE TO FAVORITES</button>
         </form>
       </div>
-    </div>
 
-  </div>
+    </div>
 </body>
 
 </html>

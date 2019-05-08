@@ -32,7 +32,7 @@
     padding-bottom: 100px;
     
     .element {
-        width: 100%;
+        width: calc(100% * (1/2));
         height: auto;
         position: relative;
         display: inline-flex;
