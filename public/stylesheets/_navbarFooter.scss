@@ -37,7 +37,8 @@
             .group__link {
                 text-decoration-line: none;
                 color: $white;
-
+                font-size: 15px;
+                
                 &:hover ~ .group__icon{
                     color: $lightBlue;
                 }
@@ -68,32 +69,16 @@
     background-position: center top;
     background-size: cover;
     background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
+    display: flex;    
     position: relative;
+    justify-content: center;
     height: 400px;
     padding: 0 50px;
 
-    &__group {
-        display: flex;
-        flex-direction: column;
-        width: 300px;
-
-        .footer__button{
-            padding: 10px;
-            border: 3px solid $lightBlue;
-            background: transparent;
-            border-radius: 5px;
-            color: $lightBlue;
-            font-size: 20px;
-        }
-
-        .footer__logo {
-            width: 200px;
-            height: 200px;
-            fill: $lightBlue;
-            text-align: end;
-        }
+    &__logo {
+        width: 150px;
+        fill: $lightBlue;
+        text-align: end;
     }
 
     &__copyRight {

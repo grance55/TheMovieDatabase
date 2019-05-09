@@ -4,7 +4,7 @@
 .search {
     background-color: $dark;
     display: flex;
-    padding: 10px;
+    padding: 50px;
     padding-left: 200px;
     align-items: center;
 
@@ -31,7 +31,7 @@
     padding-top: 80px;
 
     .element {
-        width: calc(100% * (1/5));
+        width: calc(100% * (1/5)) !important;
         height: auto;
         padding: 3px;
         position: relative;
@@ -55,9 +55,14 @@
             opacity: 0;
             color: $white;
             font-size: 20px;
+
+            .inner__name,
+            .inner__year {
+                margin: 10px;
+            }
         }
 
-        &:hover{
+        &:hover {
             .element__inner {
                 opacity: 1;
             }
@@ -93,8 +98,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    padding: 50px 0;
+    padding-top: 100px;
+    padding-bottom: 50px;
     background-color: $dark;
+    font-size: 20px;
 
     .activePage__link {
         color: $white;
