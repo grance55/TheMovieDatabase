@@ -79,10 +79,21 @@
         <div class="element__inner inner">
           <h4 class="inner__name"><%= movies[i].title %></h4>
           <h5 class="inner__year"><%= movies[i].year %></h5>
+
+          <div class="inner__rate rate">
+            <i class="fas fa-star rate__star"></i>
+            <i class="fas fa-star rate__star"></i>
+            <i class="fas fa-star rate__star"></i>
+            <i class="fas fa-star-half-alt rate__star"></i>
+            <i class="far fa-star rate__star"></i>
+
+          </div>
+
           <form action="/add-favorite" method="POST">
             <input type="hidden" value="<%= movies[i].id %>" name="id">
             <button class="favorite__button" type="submit"><i class="far fa-heart favorite__icon"></i></button>
           </form>
+
         </div>
 
       </a>

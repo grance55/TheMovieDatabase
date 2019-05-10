@@ -245,6 +245,9 @@ body {
       .movies .element__inner .inner__name,
       .movies .element__inner .inner__year {
         margin: 10px; }
+      .movies .element__inner .inner__rate {
+        font-size: 15px;
+        color: yellow; }
     .movies .element:hover .element__inner {
       opacity: 1; }
     .movies .element:hover .element__poster {
@@ -359,13 +362,14 @@ body {
 .profile {
   padding: 100px 0;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   color: #ffffff;
   background-color: #081c24; }
   .profile__icon {
-    font-size: 100px; }
+    font-size: 100px;
+    margin-right: 50px; }
 
 .wrapper__heading {
   margin: 0;
@@ -530,5 +534,7 @@ body {
             transition: all 0.3s ease; }
             .movie .group__inner .element__button .element__icon:hover {
               color: #ffffff; }
+      .movie .group__inner .rate__star {
+        color: yellow; }
 
 /*# sourceMappingURL=style.css.map */

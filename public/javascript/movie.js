@@ -1,7 +1,3 @@
-let main = $('.movie'),
-    navbar = $('.navbar'),
-    heightMain = $('.wrapper').height() - navbar.height();
+let rate = document.querySelector('.ocjena');
 
-console.log($(window).height());
-console.log(navbar.height());
-
+console.log(rate);

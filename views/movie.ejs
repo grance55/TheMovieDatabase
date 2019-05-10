@@ -73,29 +73,32 @@
         <img class="poster__img" src="<%= movie.poster %>" alt="">
       </div>
 
-
       <div class="movie__group group">
         <div class="group__cover">
           <img src="<%= movie.cover %>" alt="">
         </div>
 
-
         <div class="group__inner inner">
-
           <div class="inner__element element">
-            <h4 class="element__heading"><%= movie.title %></h4>
-            <p class="element__year">(<%= movie.year %>)</p>
+            <h4 class="element__heading"><%= movie.title %> (<%= movie.year %>)</h4>
+
             <form action="/remove-favorite" method="POST">
               <input type="hidden" value="<%= movie.id %>" name="id">
               <button class="element__button" type="submit"><i class="far fa-heart element__icon"></i></button>
             </form>
           </div>
-
+          <div class="inner__rate rate">
+            <i class="fas fa-star rate__star"></i>
+            <i class="fas fa-star rate__star"></i>
+            <i class="fas fa-star rate__star"></i>
+            <i class="fas fa-star-half-alt rate__star"></i>
+            <i class="far fa-star rate__star"></i>
+            <p id="ocjena"><%= movie.rate %></p>
+          </div>
           <p> Genre: <%= movie.genre %></p>
 
           <p><%= movie.plot %></p>
 
-          <p>Rating: <%= movie.rate %></p>
         </div>
 
       </div>

@@ -66,11 +66,13 @@
 
     <div class="wrapper__profile profile">
       <i class="fas fa-user-circle profile__icon"></i>
-      <h1 class="profile__heading">PROFILE</h1>
-      <p class="profile__mail"><%= email %></p>
+      <div class="profile_group">
+        <h1 class="profile__heading">PROFILE</h1>
+        <p class="profile__mail"><%= email %></p>
+      </div>
     </div>
 
-    <h3 class="wrapper__heading">Your favorite movies:</h3>
+
     <!--
     <div class="wrapper__favorites favorites">
       <% for(var i=0; i < movies.length; i++) { %>
@@ -107,7 +109,7 @@
         <div class="element__inner inner">
           <h4 class="inner__name"><%= movies[i].title %></h4>
           <h5 class="inner__year"><%= movies[i].year %></h5>
-          <form action="/add-favorite" method="POST">
+          <form action="/remove-favorite" method="POST">
             <input type="hidden" value="<%= movies[i].id %>" name="id">
             <button class="favorite__button" type="submit"><i class="far fa-heart favorite__icon"></i></button>
           </form>

@@ -98,7 +98,14 @@
 
             } 
 
+            .rate{
+
+                &__star{
+                    color: yellow;
+                }
+            }
         }
         
+
     }
 }
