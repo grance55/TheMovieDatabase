@@ -1,4 +1,9 @@
-let ocjena = document.querySelector('.ocjena');
+$(function(){
+    let ocjena = document.querySelector('.ocjena');
+})();
+
+
+
 
 
 

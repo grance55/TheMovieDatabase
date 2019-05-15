@@ -23,3 +23,8 @@ function deleteCookie() {
 
 }
 
+
+function changeMenu(x){
+    let elem = $(x).children('#menu__line--middle');
+    $(elem).toggleClass('is-activ');
+}
