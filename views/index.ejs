@@ -7,6 +7,7 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script type="text/javascript" src="/javascript/index.js"></script>
+  <script type="text/javascript" src="/javascript/menu.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
@@ -63,11 +64,23 @@
       </div>
 
       <div class="navbar__menu menu" onclick="changeMenu(this)">
-        <span class="menu__line"></span>
-        <span class="menu__line menu__line--middle" id='menu__line--middle'></span>
-        <span class="menu__line"></span>
+        <span class="menu__line menu__line--first js-menu__line--first"></span>
+        <span class="menu__line menu__line--middle js-menu__line--middle"></span>
+        <span class="menu__line menu__line--last js-menu__line--last"></span>
       </div>
 
+    </div>
+
+    <div class="wrapper__menuMobile menuMobile">
+      <div class="menuMobile__group group">
+        <a href="/profile" class="group__link">TO PROFILE</a>
+        <a href="/profile" class="group__icon"><i class="fas fa-user-circle"></i></a>
+      </div>
+
+      <div class="menuMobile__group group">
+        <a href="/login" class="group__link" onclick="deleteCookie()">LOG OUT</a>
+        <a href="/login" class="group__icon" onclick="deleteCookie()"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
     </div>
 
     <div class="wrapper__search search">

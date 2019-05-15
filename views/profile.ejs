@@ -7,6 +7,7 @@
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
   <script type="text/javascript" src="/javascript/profile.js"></script>
+  <script type="text/javascript" src="/javascript/menu.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
@@ -62,6 +63,24 @@
 
       </div>
 
+      <div class="navbar__menu menu" onclick="changeMenu(this)">
+        <span class="menu__line menu__line--first js-menu__line--first"></span>
+        <span class="menu__line menu__line--middle js-menu__line--middle"></span>
+        <span class="menu__line menu__line--last js-menu__line--last"></span>
+      </div>
+
+    </div>
+
+    <div class="wrapper__menuMobile menuMobile">
+      <div class="menuMobile__group group">
+        <a href="/" class="group__link">BACK HOME</a>
+        <a href="/" class="group__icon"><i class="fas fa-home"></i></a>
+      </div>
+
+      <div class="menuMobile__group group">
+        <a href="/login" class="group__link" onclick="deleteCookie()">LOG OUT</a>
+        <a href="/login" class="group__icon" onclick="deleteCookie()"><i class="fas fa-sign-out-alt"></i></a>
+      </div>
     </div>
 
     <div class="wrapper__profile profile">
@@ -71,33 +90,6 @@
         <p class="profile__mail"><%= email %></p>
       </div>
     </div>
-
-
-    <!--
-    <div class="wrapper__favorites favorites">
-      <% for(var i=0; i < movies.length; i++) { %>
-      <div class="favorites__element element">
-
-        <img class="element__poster" src="<%= movies[i].poster %>" alt="presentation">
-
-        <div class="element__group group">
-          <div class="group__header header">
-            <h4 class="header__title"><%= movies[i].title %></h4>
-            <form action="/remove-favorite" method="POST">
-              <input type="hidden" value="<%= movies[i].id %>" name="id">
-              <button class="header__button inline" type="submit"><i class="far fa-heart header__icon"></i></button>
-            </form>
-          </div>
-
-          <h5 class="group__year"><%= movies[i].year %></h5>
-          <p class="group__plot"><%= movies[i].plot %></p>
-
-        </div>
-
-      </div>
-      <% } %>
-    </div>
-    -->
 
     <div class="wrapper__movies movies">
       <% for(var i=0; i < movies.length; i++) { %>
