@@ -1,3 +1,5 @@
-let rate = document.querySelector('.ocjena');
+let ocjena = document.querySelector('.ocjena');
 
-console.log(rate);
+
+
+
