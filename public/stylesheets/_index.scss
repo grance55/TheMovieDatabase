@@ -64,6 +64,10 @@
             .inner__rate{
                 font-size: 15px;
                 color: yellow;
+
+                .rating{
+                    display: none;
+                }
             }
         }
 
@@ -142,7 +146,7 @@
         }
 
         .search {
-            margin-top: 200px;
+            
             padding-left: 50px; 
         }
 

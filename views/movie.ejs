@@ -75,7 +75,7 @@
 
     </div>
 
-    <div class="wrapper__menuMobile menuMobile">
+    <div class="wrapper__menuMobile menuMobile js-menuMobile">
       <div class="menuMobile__group group">
           <a href="/" class="group__link">BACK HOME</a>
           <a href="/" class="group__icon"><i class="fas fa-home"></i></a>
@@ -129,6 +129,34 @@
 
     </div>
 
+    <div class="wrapper__movie--mobile movieMobile">
+      <img class="movieMobile__img" src="<%= movie.poster %>" alt="">
+
+      <div class="movieMobile__inner inner">
+        <div class="inner__element element">
+          <h4 class="element__heading"><%= movie.title %> (<%= movie.year %>)</h4>
+
+          <form action="/remove-favorite" method="POST">
+            <input type="hidden" value="<%= movie.id %>" name="id">
+            <button class="element__button" type="submit"><i class="far fa-heart element__icon"></i></button>
+          </form>
+        </div>
+
+        <div class="inner__rate rate">
+          <i class="far fa-star rate__star js-rate__star"></i>
+          <i class="far fa-star rate__star js-rate__star"></i>
+          <i class="far fa-star rate__star js-rate__star"></i>
+          <i class="far fa-star rate__star js-rate__star"></i>
+          <i class="far fa-star rate__star js-rate__star"></i>
+          <span class="rating js-rating"><%= movie.rate %></span>
+        </div>
+        
+        <p><span class="inner__textBold">Genre:</span> <%= movie.genre %></p>
+
+        <p><%= movie.plot %></p>
+
+      </div>
+    </div>
 </body>
 
 </html>

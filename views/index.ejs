@@ -71,7 +71,7 @@
 
     </div>
 
-    <div class="wrapper__menuMobile menuMobile">
+    <div class="wrapper__menuMobile menuMobile js-menuMobile">
       <div class="menuMobile__group group">
         <a href="/profile" class="group__link">TO PROFILE</a>
         <a href="/profile" class="group__icon"><i class="fas fa-user-circle"></i></a>
@@ -82,7 +82,7 @@
         <a href="/login" class="group__icon" onclick="deleteCookie()"><i class="fas fa-sign-out-alt"></i></a>
       </div>
     </div>
-
+    
     <div class="wrapper__search search">
       <i class="fas fa-search search__icon"></i>
       <input class="search__input" type="text" placeholder="Search for a movie...">
@@ -100,12 +100,12 @@
           <h5 class="inner__year"><%= movies[i].year %></h5>
 
           <div class="inner__rate rate">
-            <i class="fas fa-star rate__star"></i>
-            <i class="fas fa-star rate__star"></i>
-            <i class="fas fa-star rate__star"></i>
-            <i class="fas fa-star-half-alt rate__star"></i>
-            <i class="far fa-star rate__star"></i>
-
+            <i class="far fa-star rate__star js-rate__star"></i>
+            <i class="far fa-star rate__star js-rate__star"></i>
+            <i class="far fa-star rate__star js-rate__star"></i>
+            <i class="far fa-star rate__star js-rate__star"></i>
+            <i class="far fa-star rate__star js-rate__star"></i>
+            <span class="rating js-rating"><%= movies[i].rate %></span>
           </div>
 
           <form action="/add-favorite" method="POST">

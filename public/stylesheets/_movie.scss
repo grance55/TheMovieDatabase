@@ -5,7 +5,6 @@
     background-color: $dark;
 }
 
-
 .movie {
     display: flex;
     background-color: $dark;
@@ -16,7 +15,7 @@
         display:inline-block;
         width: auto;
 
-        img {
+        &__img {
             width: 400px;
         }
 
@@ -30,6 +29,7 @@
             background: 
                 linear-gradient(to left , rgba(8, 28, 36, 1), rgba(255, 0, 0, 0)), 
         }
+
     }
     
     .group {
@@ -107,5 +107,95 @@
         }
         
 
+    }
+}
+
+.wrapper__movie--mobile{
+    display: none;
+}
+
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .movie {
+        display: none;
+    }
+
+    .movieMobile {
+        display: block;
+        padding-top: 84px;
+        color: white;
+        height: 100vh;
+
+        &__img {
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+            background-color: $dark;
+
+            &::after {
+                background: none;
+            }
+
+            
+        }
+
+        &__inner {
+            position: absolute;
+            top: 50%; left:50%;
+            transform: translate(-50%, -50%);
+            width: 75%;
+
+            .element {
+                display: inline-flex;
+                align-items: center;
+
+                &__year {
+                    margin: 0 10px;
+                }
+
+                &__heading,
+                &__year {
+                    font-size: 25px;
+                    font-weight: bold;
+                }
+
+                &__button {
+                    width: 50px;
+                    height: 50px;
+                    border: none;
+                    background: transparent;
+                    outline: none;
+        
+                    .element__icon {
+                        font-size: 20px;
+                        color: red;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        
+                        &:hover {
+                            color: $white;
+                        }
+                    }
+                }
+
+            } 
+
+            .rate{
+                
+                &__star {
+                    color: yellow;
+                }
+
+                .rating {
+                    margin-left: 10px;
+                    font-weight: bold;
+                }
+            }
+
+            .inner__textBold{
+                font-weight: bold;
+            }
+        }
+        
     }
 }
