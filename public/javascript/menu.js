@@ -14,4 +14,6 @@ function changeMenu(x){
 
     $(menu).toggleClass('active-wrapper__menuMobile');
     
+
+    
 }

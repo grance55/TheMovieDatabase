@@ -130,13 +130,19 @@
 
 @media (min-width: 768px) and (max-width: 1024px) {
     .wrapper {
+        min-height: 100vh;
+        overflow: auto;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        background-color: $dark;
 
         .navbar {
             padding: 20px 50px;
         }
 
         .search {
-            padding: 25px;
+            margin-top: 200px;
             padding-left: 50px; 
         }
 
@@ -161,11 +167,16 @@
 
 @media (min-width: 320px) and (max-width: 767px) {
     .wrapper {
-
-        
+        min-height: 100vh;
+        overflow: auto;
+        margin: 0;
+        padding: 0;
+        max-width: 100%;
+        background-color: $dark;
 
         .search {
             padding: 20px;
+            padding-top: 150px;
         }
 
         .movies {
